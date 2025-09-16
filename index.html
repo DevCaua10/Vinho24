@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinho24h — Adega automática premium para condomínios</title>
+  <meta name="description" content="Instalação 100% gratuita de adegas automáticas Vinho24h para condomínios. Experiência premium 24h sem custo para o síndico.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#9b1b2b',
+            secondary: '#c85a4a',
+            dark: '#0b0b0b',
+            light: '#e6e6e6',
+            accent: '#ffddd6'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      background-color: #0b0b0b;
+      color: #e6e6e6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #9b1b2b, #c85a4a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(90deg, #b73a3f, #9b1b2b);
+    }
+    
+    .card-glass {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    input, select, textarea {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: rgba(155, 27, 43, 0.5) !important;
+      box-shadow: 0 0 0 2px rgba(155, 27, 43, 0.1);
+    }
+    
+    .btn-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(155, 27, 43, 0.3);
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(155, 27, 43, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(155, 27, 43, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(155, 27, 43, 0); }
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-8">
+      <div class="flex items-center space-x-3">
+        <div class="w-11 h-11 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-xl">V</div>
+        <div>
+          <div class="gradient-text font-bold text-xl">Vinho24h</div>
+          <div class="text-xs text-gray-400">Adegas automáticas premium</div>
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex space-x-6">
+        <a href="#como-funciona" class="text-gray-400 hover:text-accent transition">Como funciona</a>
+        <a href="#beneficios" class="text-gray-400 hover:text-accent transition">Benefícios</a>
+        <a href="#formulario" class="text-gray-400 hover:text-accent transition">Solicitar</a>
+        <a href="#faq" class="text-gray-400 hover:text-accent transition">FAQ</a>
+      </nav>
+      
+      <a href="#formulario" class="gradient-bg text-white px-5 py-2 rounded-lg font-medium hover:opacity-90 transition btn-hover">
+        Quero no meu condomínio
+      </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="grid md:grid-cols-2 gap-12 items-center mt-12 mb-20">
+      <div>
+        <span class="inline-block bg-primary/10 text-accent border border-primary/20 px-3 py-1 rounded-full text-sm font-medium mb-4">
+          INSTALAÇÃO 100% GRATUITA
+        </span>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          Transforme seu condomínio com uma <span class="gradient-text">adega automática premium</span>
+        </h1>
+        
+        <p class="text-lg text-gray-300 mb-8">
+          Instalamos sem custo e oferecemos vinhos selecionados 24h/dia para seus moradores. 
+          <span class="font-medium text-white">Zero investimento</span> para o condomínio - nós cuidamos de tudo.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="#formulario" class="gradient-bg text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition btn-hover pulse">
+            Quero instalar agora
+          </a>
+          <a href="#beneficios" class="border border-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/5 transition">
+            Ver benefícios
+          </a>
+        </div>
+        
+        <div class="flex items-center flex-wrap gap-4 text-sm text-gray-400">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="font-medium text-white">+50 condomínios</span>
+          </div>
+          <div class="hidden sm:block">•</div>
+          <div>100% sem custo</div>
+          <div class="hidden sm:block">•</div>
+          <div>Manutenção inclusa</div>
+        </div>
+        
+        <!-- Mini Form -->
+        <form class="card-glass p-4 rounded-xl mt-8" id="leadTop" onsubmit="event.preventDefault(); alert('Lead enviado (exemplo)');">
+          <div class="grid sm:grid-cols-3 gap-3 mb-3">
+            <input type="text" placeholder="Seu nome" class="px-4 py-2 rounded-lg text-white placeholder-gray-500" required>
+            <input type="tel" placeholder="WhatsApp" class="px-4 py-2 rounded-lg text-white placeholder-gray-500" required>
+            <select class="px-4 py-2 rounded-lg text-white" required>
+              <option value="">Estado</option>
+              <option>SP</option><option>RJ</option><option>MG</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full gradient-bg text-white py-3 rounded-lg font-bold hover:opacity-90 transition">
+            Ver disponibilidade
+          </button>
+        </form>
+      </div>
+      
+      <div class="relative">
+        <div class="relative z-10 w-full max-w-md mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+               alt="Adega Vinho24h em condomínio" class="w-full h-auto">
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
+        <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-secondary/10 blur-xl"></div>
+      </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="mb-20">
+      <div class="card-glass p-8 rounded-2xl">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-3xl font-bold text-white mb-6">
+              <span class="gradient-text">Zero trabalho</span> para o condomínio
+            </h2>
+            <p class="text-gray-300 mb-8">
+              Nós assumimos toda operação da adega automática. Seu condomínio oferece um 
+              <span class="font-medium text-white">diferencial premium</span> sem nenhum custo ou preocupação.
+            </p>
+            
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="gradient-bg text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Instalação gratuita</h3>
+                  <p class="text-gray-400">
+                    Montamos a adega completa em área comum sem custo para o condomínio.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="gradient-bg text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Abastecimento automático</h3>
+                  <p class="text-gray-400">
+                    Reposição semanal com vinhos selecionados por especialistas.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="gradient-bg text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Gestão completa</h3>
+                  <p class="text-gray-400">
+                    Monitoramento remoto, manutenção e relatórios mensais inclusos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-dark/50 border border-white/5 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4">Por que seu condomínio precisa?</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  <strong class="text-white">Valorização imobiliária</strong> - Diferencial competitivo no mercado
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  <strong class="text-white">Satisfação dos moradores</strong> - Comodidade e experiência premium
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  <strong class="text-white">Exclusividade regional</strong> - Apenas uma adega por área
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  <strong class="text-white">Renda extra</strong> - Possibilidade de comissão para o condomínio
+                </span>
+              </li>
+            </ul>
+            
+            <div class="mt-8 gradient-bg/10 border border-primary/20 rounded-lg p-4">
+              <p class="text-white font-medium mb-2">Últimas vagas disponíveis!</p>
+              <p class="text-gray-300 text-sm">
+                Regiões podem se esgotar — garanta sua adega gratuita hoje mesmo.
+              </p>
+              <a href="#formulario" class="inline-block gradient-bg text-white px-4 py-2 rounded-lg text-sm font-bold mt-3 hover:opacity-90 transition">
+                Reservar vaga
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="beneficios" class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Benefícios <span class="gradient-text">exclusivos</span> para seu condomínio
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Oferecemos a solução completa para transformar áreas comuns em experiências premium
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card-glass p-6 rounded-xl">
+          <div class="gradient-bg text-white w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Zero custo</h3>
+          <p class="text-gray-300">
+            Instalação, manutenção e abastecimento sem nenhum investimento do condomínio.
+          </p>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <div class="gradient-bg text-white w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Curadoria premium</h3>
+          <p class="text-gray-300">
+            Vinhos selecionados por especialistas para atender todos os gostos e ocasiões.
+          </p>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <div class="gradient-bg text-white w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Disponibilidade 24h</h3>
+          <p class="text-gray-300">
+            Moradores podem adquirir vinhos a qualquer momento, inclusive fins de semana.
+          </p>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <div class="gradient-bg text-white w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Segurança total</h3>
+          <p class="text-gray-300">
+            Sistema antifurto, monitoramento remoto e controle de acesso integrado.
+          </p>
+        </div>
+      </div>
+      
+      <div class="card-glass p-6 rounded-xl mt-8 gradient-bg/10 border border-primary/20">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Seu condomínio pode ser o próximo!</h3>
+            <p class="text-gray-300">
+              Vagas limitadas por região - garanta sua adega premium sem custo.
+            </p>
+          </div>
+          <a href="#formulario" class="gradient-bg text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition btn-hover whitespace-nowrap">
+            Quero instalar agora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="mb-20">
+      <div class="card-glass p-8 rounded-2xl">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="md:w-2/3">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              <span class="gradient-text">+50 condomínios</span> já transformados
+            </h2>
+            <p class="text-gray-300 mb-6">
+              Síndicos e moradores aprovam a solução Vinho24h. Veja depoimentos reais de quem já instalou.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#formulario" class="gradient-bg text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition btn-hover">
+                Quero minha adega
+              </a>
+              <a href="#" class="border border-gray-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/5 transition">
+                Ver depoimentos
+              </a>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4 md:w-1/3">
+            <div class="bg-dark/50 p-4 rounded-lg text-center">
+              <div class="text-3xl font-bold text-white mb-1">50+</div>
+              <div class="text-sm text-gray-400">Instalações</div>
+            </div>
+            <div class="bg-dark/50 p-4 rounded-lg text-center">
+              <div class="text-3xl font-bold text-white mb-1">R$0</div>
+              <div class="text-sm text-gray-400">Investimento</div>
+            </div>
+            <div class="bg-dark/50 p-4 rounded-lg text-center">
+              <div class="text-3xl font-bold text-white mb-1">24h</div>
+              <div class="text-sm text-gray-400">Disponível</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section id="formulario" class="mb-20">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card-glass p-8 rounded-2xl">
+          <h2 class="text-3xl font-bold text-white mb-2">
+            Solicite sua adega <span class="gradient-text">gratuita</span>
+          </h2>
+          <p class="text-gray-300 mb-6">
+            Preencha o formulário e nossa equipe entrará em contato em até 24h para confirmar disponibilidade.
+          </p>
+          
+          <form id="leadFull" onsubmit="event.preventDefault(); handleFormSubmit();" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Nome completo</label>
+              <input type="text" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="Seu nome" required>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">WhatsApp</label>
+                <input type="tel" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="(11) 99999-9999" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">E-mail</label>
+                <input type="email" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="seu@email.com" required>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">Condomínio</label>
+                <input type="text" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="Nome do condomínio" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">Unidades</label>
+                <input type="number" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="Quantidade de apartamentos" required>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">Cidade</label>
+                <input type="text" class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" placeholder="Sua cidade" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-1">Estado</label>
+                <select class="w-full px-4 py-3 rounded-lg text-white" required>
+                  <option value="">Selecione</option>
+                  <option>SP</option><option>RJ</option><option>MG</option>
+                </select>
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-400 mb-1">Mensagem (opcional)</label>
+              <textarea class="w-full px-4 py-3 rounded-lg text-white placeholder-gray-500" rows="3" placeholder="Alguma informação adicional"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full gradient-bg text-white py-4 rounded-lg font-bold hover:opacity-90 transition btn-hover">
+              Solicitar adega gratuita
+            </button>
+          </form>
+        </div>
+        
+        <div>
+          <div class="card-glass p-8 rounded-2xl h-full">
+            <h3 class="text-2xl font-bold text-white mb-4">Atendimento personalizado</h3>
+            <p class="text-gray-300 mb-6">
+              Após o envio do formulário, nosso especialista entrará em contato para:
+            </p>
+            
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  Confirmar disponibilidade para sua região
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  Agendar visita técnica sem compromisso
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  Apresentar modelos e opções de instalação
+                </span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300">
+                  Explicar todos os benefícios em detalhes
+                </span>
+              </li>
+            </ul>
+            
+            <div class="border-t border-white/10 pt-6">
+              <h4 class="text-lg font-bold text-white mb-3">Fale diretamente pelo WhatsApp</h4>
+              <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%2C+quero+saber+sobre+a+adega+Vinho24h" 
+                 class="inline-flex items-center gradient-bg text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition btn-hover">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+                Chamar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Dúvidas <span class="gradient-text">frequentes</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Confira as principais perguntas sobre a instalação da adega automática
+        </p>
+      </div>
+      
+      <div class="space-y-4 max-w-4xl mx-auto">
+        <div class="card-glass p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center justify-between cursor-pointer">
+            <span>A instalação realmente não tem custo para o condomínio?</span>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h3>
+          <div class="text-gray-300">
+            Sim, a instalação é 100% gratuita. Nós assumimos todos os custos de equipamento, montagem e integração. 
+            O condomínio só precisa disponibilizar um espaço adequado em área comum.
+          </div>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center justify-between cursor-pointer">
+            <span>Quem é responsável pela manutenção e reposição?</span>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h3>
+          <div class="text-gray-300">
+            A Vinho24h cuida de toda operação: reposição semanal de estoque, manutenção preventiva, limpeza e 
+            monitoramento remoto. O síndico não precisa se preocupar com nada.
+          </div>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center justify-between cursor-pointer">
+            <span>Quanto espaço é necessário para instalação?</span>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h3>
+          <div class="text-gray-300">
+            Nossos modelos ocupam de 1m² a 2m², podendo ser instalados em halls, salões de festas ou outras áreas 
+            comuns. Fazemos estudo técnico para adequação ao espaço disponível.
+          </div>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center justify-between cursor-pointer">
+            <span>Como é feita a seleção dos vinhos?</span>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h3>
+          <div class="text-gray-300">
+            Nossa equipe de especialistas seleciona rótulos premiados de diversas regiões, com opções para todos 
+            os gostos e ocasiões. O mix pode ser personalizado conforme preferência dos moradores.
+          </div>
+        </div>
+        
+        <div class="card-glass p-6 rounded-xl">
+          <h3 class="text-xl font-bold text-white mb-3 flex items-center justify-between cursor-pointer">
+            <span>O condomínio recebe alguma comissão?</span>
+            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </h3>
+          <div class="text-gray-300">
+            Sim, oferecemos opções de comissão sobre vendas que podem ser revertidas para o fundo de reserva ou 
+            melhorias no condomínio. Detalhes são acertados durante a instalação.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="mb-20">
+      <div class="card-glass p-8 rounded-2xl gradient-bg/10 border border-primary/20">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold text-white mb-4">
+            Transforme seu condomínio hoje mesmo
+          </h2>
+          <p class="text-gray-300 mb-8">
+            Vagas limitadas por região. Solicite agora sua adega automática premium sem custo de instalação.
+          </p>
+          <a href="#formulario" class="inline-block gradient-bg text-white px-8 py-4 rounded-lg font-bold hover:opacity-90 transition btn-hover pulse text-lg">
+            Quero minha adega gratuita
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-400 text-sm border-t border-white/5 pt-8">
+      <div class="mb-4">
+        <a href="#" class="text-gray-400 hover:text-white transition mx-3">Termos de Uso</a>
+        <a href="#" class="text-gray-400 hover:text-white transition mx-3">Política de Privacidade</a>
+        <a href="#" class="text-gray-400 hover:text-white transition mx-3">Contato</a>
+      </div>
+      <p>© 2023 Vinho24h. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simulação de envio de formulário
+    function handleFormSubmit() {
+      const form = document.getElementById('leadFull');
+      const data = new FormData(form);
+      const payload = {};
+      data.forEach((v,k) => payload[k] = v);
+      
+      console.log('Lead enviado:', payload);
+      alert('Obrigado! Recebemos sua solicitação. Nossa equipe entrará em contato em até 24h.');
+      form.reset();
+      
+      // Rolar para o topo após envio
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Adicionar interação ao FAQ
+    document.querySelectorAll('#faq .card-glass h3').forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.nextElementSibling;
+        const icon = item.querySelector('svg');
+        
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
