@@ -76,6 +76,34 @@
       70% { box-shadow: 0 0 0 10px rgba(155, 27, 43, 0); }
       100% { box-shadow: 0 0 0 0 rgba(155, 27, 43, 0); }
     }
+
+    /* Video container styles */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .counter {
+      animation: countUp 1s ease-out forwards;
+    }
   </style>
 </head>
 <body class="font-sans">
@@ -163,6 +191,44 @@
         </div>
         <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-primary/10 blur-xl"></div>
         <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-secondary/10 blur-xl"></div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="mb-20">
+      <div class="card-glass p-8 rounded-2xl">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-white mb-4">
+              <span class="gradient-text">Conheça nossa adega</span> em funcionamento
+            </h2>
+            <p class="text-gray-300 mb-6">
+              Veja como a Vinho24h transforma a experiência dos moradores com acesso 24h a vinhos selecionados.
+            </p>
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-white font-medium">2 minutos</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                <span class="text-white font-medium">Demonstração</span>
+              </div>
+            </div>
+            <a href="#formulario" class="inline-block gradient-bg text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition btn-hover">
+              Solicitar demonstração
+            </a>
+          </div>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -351,7 +417,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between gap-8">
           <div class="md:w-2/3">
             <h2 class="text-3xl font-bold text-white mb-4">
-              <span class="gradient-text">+50 condomínios</span> já transformados
+              <span class="gradient-text" id="counter-condominios">+50 condomínios</span> já transformados
             </h2>
             <p class="text-gray-300 mb-6">
               Síndicos e moradores aprovam a solução Vinho24h. Veja depoimentos reais de quem já instalou.
@@ -368,17 +434,58 @@
           
           <div class="grid grid-cols-3 gap-4 md:w-1/3">
             <div class="bg-dark/50 p-4 rounded-lg text-center">
-              <div class="text-3xl font-bold text-white mb-1">50+</div>
+              <div class="text-3xl font-bold text-white mb-1 counter" id="counter1">50+</div>
               <div class="text-sm text-gray-400">Instalações</div>
             </div>
             <div class="bg-dark/50 p-4 rounded-lg text-center">
-              <div class="text-3xl font-bold text-white mb-1">R$0</div>
+              <div class="text-3xl font-bold text-white mb-1 counter" id="counter2">R$0</div>
               <div class="text-sm text-gray-400">Investimento</div>
             </div>
             <div class="bg-dark/50 p-4 rounded-lg text-center">
-              <div class="text-3xl font-bold text-white mb-1">24h</div>
+              <div class="text-3xl font-bold text-white mb-1 counter" id="counter3">24h</div>
               <div class="text-sm text-gray-400">Disponível</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="mb-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          <span class="gradient-text">Nossas adegas</span> em condomínios
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Veja como nossos equipamentos se integram perfeitamente aos espaços comuns
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card-glass rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+               alt="Adega Vinho24h em hall de entrada" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-white mb-2">Hall de entrada</h3>
+            <p class="text-gray-400 text-sm">Integração perfeita com o design do condomínio</p>
+          </div>
+        </div>
+        
+        <div class="card-glass rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+               alt="Adega Vinho24h em salão de festas" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-white mb-2">Salão de festas</h3>
+            <p class="text-gray-400 text-sm">Conveniência para eventos e comemorações</p>
+          </div>
+        </div>
+        
+        <div class="card-glass rounded-xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+               alt="Adega Vinho24h em área gourmet" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-white mb-2">Área gourmet</h3>
+            <p class="text-gray-400 text-sm">Complemento ideal para espaços de lazer</p>
           </div>
         </div>
       </div>
@@ -646,6 +753,34 @@
         }
       });
     });
+
+    // Counter animation
+    function animateCounter(element, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.innerHTML = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    // Initialize counters when section is visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.getElementById('counter1'), 0, 50, 1000);
+          document.getElementById('counter2').textContent = 'R$0';
+          document.getElementById('counter3').textContent = '24h';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.5});
+
+    observer.observe(document.querySelector('#counter-condominios').parentElement.parentElement);
   </script>
 </body>
 </html>
